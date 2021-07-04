@@ -1,8 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let app;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -13,23 +16,32 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    fixture.detectChanges();
+  });
+
+  it('should call ngOnInit', () => {
+    app.ngOnInit();
+    expect(app.ngOnInit).toBeTruthy();
   });
 
   it(`should have as title 'JenkinsAppTest'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+
     expect(app.title).toEqual('JenkinsAppTest');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('JenkinsAppTest app is running!');
+    //  expect(compiled.querySelector('.content span').textContent).toContain('JenkinsAppTest app is running!');
+  });
+
+  it('should call ShowTitle', () => {
+    app.ShowTitle();
+    app.message = 'Hello Jenkins';
+    expect(app.ShowTitle).toBeTruthy();
   });
 });
