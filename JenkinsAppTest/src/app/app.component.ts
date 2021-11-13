@@ -8,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'JenkinsAppTest';
   message: string;
+  myInputMessage = 'I am the Parent Component';
+
 constructor(){}
 
 ngOnInit(): void{
   this.ShowTitle();
+  console.log(this.myInputMessage);
 }
 
   ShowTitle(): void{
     this.message = 'Hello Jenkins';
+  }
+  // tslint:disable-next-line:typedef
+  GetChildData(data){
+    console.log(data);
   }
 }

@@ -3,5 +3,6 @@
   <br>
   <div><strong style="font-family: 'Gill Sans', 'Gill Sans MT'; background-color: blue;">{{message}}</strong></div>
 </div>
-
+<br>
+<app-header [myInputMsg]="myInputMessage" (OutputMsg) = "GetChildData($event)"></app-header>
 <router-outlet></router-outlet>

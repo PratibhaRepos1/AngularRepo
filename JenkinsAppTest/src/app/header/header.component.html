@@ -1,0 +1,43 @@
+<div class="content">
+<table class="table table-light" style="width: 50%;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h3>Div Hide/Show</h3>
+<br>
+<button (click)="toggleShow()" type="checkbox" >show/hide</button>
+<br>
+<div *ngIf="isShown" class="row container-fluid"  id="divshow" >
+    <strong style="font-family: 'Gill Sans', 'Gill Sans MT'; background-color: blue;">Div Content
+  </strong>
+</div>
+</div>
+<br>
+<button (click) ="sendValues">Send Data</button>
