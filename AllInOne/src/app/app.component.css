@@ -1,0 +1,7 @@
+.centerText {
+  text-align: center; /* This puts the text into the center of the screen. */
+  font-style: italic;
+  color: blueviolet;
+
+  font-size: 40px;
+}
