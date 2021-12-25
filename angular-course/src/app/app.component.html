@@ -1,0 +1,4 @@
+<h1>Welcome to {{ data.title }} </h1>
+<img [src]="imageSrc" (click)="onLogoClicked()" style="width: 300px;height: 200px;" />
+<br>
+<input class="demo" (keyup)="onKeyUp(titleInput.value)" [value]="data.title" #titleInput>
