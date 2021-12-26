@@ -1,4 +1,19 @@
-<h1>Welcome to {{ data.title }} </h1>
-<img [src]="imageSrc" (click)="onLogoClicked()" style="width: 300px;height: 200px;" />
-<br>
-<input class="demo" (keyup)="onKeyUp(titleInput.value)" [value]="data.title" #titleInput>
+<div class="top-menu">
+ <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+</div>
+
+
+
+<div class="courses">
+<course-card *ngFor="let course of courses"
+(courseSelected) = "onCourseSelected($event)" [course]="course"></course-card>
+
+</div>
+
+
+
+
+
+
+

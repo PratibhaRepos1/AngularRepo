@@ -1,4 +1,7 @@
+import { COURSES } from './../db-data';
 import { Component, OnInit } from '@angular/core';
+import { Course } from './model/Course';
+
 
 @Component({
   selector: 'app-root',
@@ -6,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
- // title = 'angular-course';
 
- data = {
-   title: ' Angular Core Deep Dive'
- };
+courses = COURSES;
+
 
  imageSrc = '../assets/images/logo.jpeg';
  imageAlt = 'logo';
@@ -18,11 +19,11 @@ export class AppComponent implements OnInit {
  ngOnInit() {
 
  }
- onLogoClicked(): void {
-   alert('Hello Angular World!');
- }
- onKeyUp(newtitle: string): void {
-     this.data.title = newtitle;
+
+ onEditCourse(): void {}
+ // tslint:disable-next-line:typedef
+ onCourseSelected(course: Course){
+   console.log('onCardClicked called', course);
  }
 
 }
