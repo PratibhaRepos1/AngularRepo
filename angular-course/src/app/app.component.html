@@ -6,8 +6,9 @@
 
 
 <div class="courses">
-<course-card *ngFor="let course of courses"
-(courseSelected) = "onCourseSelected($event)" [course]="course"></course-card>
+<course-card *ngFor="let course of courses; index as i; first as isFirst;"
+[class.is-First]="isFirst"
+(courseSelected) = "onCourseSelected($event)" [course]="course" [cardIndex]="i + 1"></course-card>
 
 </div>
 

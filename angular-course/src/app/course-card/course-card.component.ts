@@ -8,9 +8,13 @@ import { Course } from '../model/Course';
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.css']
 })
+
 export class CourseCardComponent implements OnInit {
   @Input()
   course: Course;
+
+  @Input()
+  cardIndex: number;
 
   @Output()
   courseSelected = new EventEmitter<Course>();

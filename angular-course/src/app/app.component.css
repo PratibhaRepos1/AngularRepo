@@ -17,3 +17,7 @@ input.demo {
   max-width: 400px;
   margin: 50px auto;
 }
+is-first {
+  border-top: 2px solid grey;
+  padding-top: 20px;
+}
