@@ -1,4 +1,9 @@
-<h2>
-  Revise all the concepts in angular
-</h2>
+<h2>Revise all the concepts in angular</h2>
+<h3>@Input @Output EventEmitter</h3>
+
+<app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
+<div class="dropdown-divider"></div>
+
+<app-post-list [posts]="storedPosts"></app-post-list>
+
 <router-outlet></router-outlet>

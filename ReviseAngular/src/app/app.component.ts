@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ReviseAngular';
+  storedPosts = []
+
+  onPostAdded(event) {
+    this.storedPosts.push(event);
+
+  }
 }
