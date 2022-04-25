@@ -1,3 +1,4 @@
+import { TestService } from './test.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ReviseAngular';
   storedPosts = []
+
+  constructor(svc: TestService) {
+
+    svc.PrintToConsole('calling test service');
+  }
 
   onPostAdded(event) {
     this.storedPosts.push(event);

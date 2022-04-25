@@ -1,0 +1,10 @@
+<p>Template Driven Form in Angular!</p>
+<form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+  <input type="text" name="name" placeholder="Enter name" ngModel>
+  <br><br>
+  <input type="password" name="password" placeholder="Enter password" ngModel>
+  <br><br>
+  <button class="btn btn-primary">Login</button>
+</form>
+<br><br>
+<button (click)="loginUser(loginForm.value)" class="btn btn-primary">Outside form Login</button>
