@@ -5,6 +5,23 @@
 </div>
 <div>
   <label> Use Letters </label>
-  <input type="checkbox">
+  <input type="checkbox" (change)="onChangeUseLetters()">
 </div>
+<div>
+  <label> Use Numbers </label>
+  <input type="checkbox" (change)="onChangeUseNumbers()">
+</div>
+<div>
+  <label> Use Symbols </label>
+  <input type="checkbox" (change)="onChnageUseSymbols()">
+</div>
+<div><button (click)="onButtonClick()">Generate!</button></div>
+<div>
+  <label>Your Password</label>
+  <input [value]="password" />
+
+
+</div>
+
+
 <router-outlet></router-outlet>
