@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Anglar15App';
   name = 'Luis';
-  imgURL = 'https://picsum.photos/seed/picsum/200/300'
+  imgURL = 'https://picsum.photos/seed/picsum/200/300';
+
+
+  blueClass = false;
+  fontSize = 16;
+
   getName() {
 
     return this.name;

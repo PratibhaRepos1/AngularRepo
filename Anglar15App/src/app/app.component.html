@@ -1,3 +1,15 @@
+
+
+<!-- <ng-template [ngIf]="blueClass">
+  <p>Button is blue </p>
+</ng-template> -->
+
+<p *ngIf="blueClass">Button is blue </p>
+
+<button (click)="blueClass = !blueClass" [ngClass]="{blue: blueClass }"
+[ngStyle]="{ 'font-size.px': fontSize }">Change</button>
+<hr>
+
 <h2>Angular App 15 Basics of Angular</h2>
 <div>property and event binding</div>
 <br>
