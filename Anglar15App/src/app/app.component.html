@@ -1,2 +1,14 @@
 <h2>Angular App 15 Basics of Angular</h2>
+<div>property and event binding</div>
+<br>
+<input (keyup)="changeImage($event)" [value]="imgURL">
+<app-post [img]="imgURL" (imgSelected)="logImg($event)">
+  <p>some content</p>
+</app-post>
+
+<h3>{{name.toUpperCase() }}</h3>
+<div>
+  Hello {{ getName() }}
+</div>
+
 <router-outlet></router-outlet>
