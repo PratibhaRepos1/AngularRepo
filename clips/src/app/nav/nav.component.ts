@@ -16,10 +16,10 @@ export class NavComponent implements OnInit {
 
     }
     openModal($event: Event) {
-      debugger;
+
      $event.preventDefault();
 
-     this.modal.toggleModal()
+     this.modal.toggleModal('auth')
     }
 
 }
