@@ -29,3 +29,21 @@ const subscriptionEvent = observableEvent.subscribe(
     console.log
 );
 
+/*
+ 2.Declrative Programming with operators
+"The Of and from Operator" 
+const observableOf = from('pratibha')
+
+const subsriptionOf = observableOf.subscribe({
+    next:(value) => {
+        console.log(value);
+    },
+    complete() {
+        console.log('complete');
+    }
+
+})
+
+console.log('hello');
+*/
+
