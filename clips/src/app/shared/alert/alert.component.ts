@@ -9,6 +9,12 @@ export class AlertComponent {
 @Input() color ='blue';
 
 get bgColor() {
-  return `bg-${this.color}-400`
+ // debugger;
+ //return 'orange';
+ return `bg-${this.color}-400`
+
+
+
+
 }
 }
