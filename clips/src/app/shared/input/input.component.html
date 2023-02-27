@@ -31,6 +31,12 @@ class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
     - Can contain special characters
   </p>
 
+  <p *ngIf="control.errors?.['noMatch']" class="text-red-400">
+   password do not match.
+  </p>
+  <p *ngIf="control.errors?.['EmailTaken']" class="text-red-400">
+    Email Taken. please try another email.
+   </p>
 </ng-container>
 
 
