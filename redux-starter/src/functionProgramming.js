@@ -77,3 +77,24 @@ const arr = [1,2,3,4];
 const addedNumbers = [5, ...arr];
 
 console.log(addedNumbers);
+
+const book = {
+    author: 'Robert Kiyoskai',
+    book: {
+        name: 'Rich Dad Poor Dad',
+        price: '$8',
+        rating: 4.7,
+    },
+};
+
+const newBook = {...book, 
+    book: {... book, price:'$10', rating: 4.8}};
+console.log(book);
+console.log(newBook);
+
+
+const arrayOfBooks = ['book1', 'book2', 'book3'];
+
+const newArrayOfBooks = arrayOfBooks.map(book => book === 'book2' ? 'book4' : book)
+
+console.log(newArrayOfBooks);
