@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>NgClass Directives Example: </h3>
+    <li class="alert" *ngFor="let car of cars"
+    [ngClass] ="{
+        'alert-primary': car.name === 'MG Hector',
+        'alert-secondary': car.name === 'BMW',
+        'alert-success' : car.name === 'Tesla',
+        'alert-danger':car.name === 'Jaguar',
+        'alert-warning':car.name === 'Suzuki',
+
+    }">
+    {{car.name}}
+    </li>
+    <br>
+    <br>
+    <h3>NgStyle Directive Example: with condition</h3>
+    <div [ngStyle]="{'background-color' : (isSpecial === true) ? 'pink' : 'blue' }">
+        This is [ngStyle] Example with condition </div>
+        <br>
+    <button (click) = "clickMe()">Click Me 🤞</button>
+</div>
