@@ -4,22 +4,24 @@ import { Observable } from "rxjs";
 import { Course } from "../app/model/course";
 import { map, shareReplay } from "rxjs/operators";
 
-@Injectable ({
-  providedIn:'root'
-
+@Injectable({
+  providedIn: "root",
 })
 export class CoursesService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient){}
+  loadAllCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>("/api/courses").pipe(
+      map((res) => res["payload"]),
+      shareReplay()
+    );
+  }
 
-  loadAllCourses() : Observable<Course[]> {
-      return this.http.get<Course[]>('/api/courses')
+  saveCourse(courseId: string, changes: Partial<Course>) : Observable<any> {
+      return this.http.put(`api/courses/${courseId}`, changes)
       .pipe(
-        map(res => res['payload']),
         shareReplay()
       );
 
-
   }
-
 }
