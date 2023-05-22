@@ -7,3 +7,7 @@ docker-compose build
 docker-compose up
 
 --once api build and up --- you can run it on http://localhost:3000/api/atricles
+
+
+------api list -----------
+https://conduit.productionready.io/api/users
