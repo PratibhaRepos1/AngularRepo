@@ -11,6 +11,7 @@ import {AuthService} from "./auth.service";
 import { EffectsModule } from '@ngrx/effects';
 import * as fromAuth from './reducers';
 import { AuthGuard } from './auth.guards';
+import { AuthEffects } from './auth.effects';
 
 @NgModule({
     imports: [
@@ -23,7 +24,7 @@ import { AuthGuard } from './auth.guards';
         StoreModule.forFeature(
            'auth',
             fromAuth.authReducer),
-
+        EffectsModule.forFeature([AuthEffects])
     ],
     declarations: [LoginComponent],
     exports: [LoginComponent]
