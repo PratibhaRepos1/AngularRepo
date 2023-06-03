@@ -1,34 +1,28 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Course } from '../model/course';
 
-import { Course } from '../model/Course';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'course-card',
   templateUrl: './course-card.component.html',
-  styleUrls: ['./course-card.component.css']
+  styleUrls: ['./course-card.component.css'],
 })
-
 export class CourseCardComponent implements OnInit {
   @Input()
-  course: Course;
+  course: Course | undefined;
 
   @Input()
-  cardIndex: number;
+  cardIndex: number | undefined;
 
   @Output()
   courseSelected = new EventEmitter<Course>();
 
+  constructor() {}
 
-  imageSrc = '../assets/images/logo.jpeg';
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-  // tslint:disable-next-line:typedef
-  onCourseViewed() {
-    console.log('course card clicked');
+  oncourseView() {
+    console.log('card component - button cliked');
     this.courseSelected.emit(this.course);
-
   }
 }

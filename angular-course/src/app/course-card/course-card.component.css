@@ -1,3 +1,4 @@
+
 :host {
   display: block;
 }
@@ -29,8 +30,7 @@
   text-align: center;
   border-radius: 4px;
   padding: 20px 0;
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.14),
-    0 4px 8px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, .2), 0 2px 8px 0 rgba(0, 0, 0, .14), 0 4px 8px -1px rgba(0, 0, 0, .12);
 }
 
 .course-card .course-title {
@@ -44,10 +44,7 @@
   margin-top: 15px;
   user-select: none;
 }
-is-first {
-  border-top: 2px solid grey;
-  padding-top: 20px;
-}
+
 .course-card .course-description input {
   font-size: 20px;
 }
@@ -55,3 +52,5 @@ is-first {
 .course-card.beginner {
   background: lightsalmon;
 }
+
+

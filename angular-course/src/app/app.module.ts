@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 
@@ -10,7 +11,8 @@ import { CourseCardComponent } from './course-card/course-card.component';
     CourseCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
