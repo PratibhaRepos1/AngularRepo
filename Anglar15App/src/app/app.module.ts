@@ -8,12 +8,14 @@ import { CrudService } from './crud.service';
 import { PostComponent } from './post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogComponent } from './blog/blog.component';
+import { OperatorsComponent } from './operators/operators.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    BlogComponent
+    BlogComponent,
+    OperatorsComponent
   ],
   imports: [
     BrowserModule,
