@@ -1,0 +1,26 @@
+<p>Blogs Works!</p>
+
+<label>Blog:</label>
+<!-- <input type="text" class="form-control"
+(input)="onUpdateBlogName($event)"> -->
+
+<input type="text" class="form-control"
+(input)="onUpdateBlogName($event)" [(ngModel)]="blogName" >
+
+{{blogName}}
+<br>
+
+<button class="btn btn-primary" [disabled]="!allNewBlog" (click)="onCreateBlog();"
+>Add New Blog</button>
+<!-- <p [innerText]="allNewBlog"></p>
+<p>{{ blogCreationStatus }}</p> -->
+
+<!-- <p *ngIf="blogCreated; else noBlog">Blog was created, blog name is {{ blogName}}</p>
+<ng-template #noBlog>
+    <p>No Blog was created.</p>
+</ng-template> -->
+
+<p *ngIf="blogCreated">Blog was created, blog name is {{ blogName}}</p>
+
+<app-blog></app-blog>
+<app-blog></app-blog>
