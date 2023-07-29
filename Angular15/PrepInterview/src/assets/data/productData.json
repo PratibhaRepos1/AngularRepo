@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Tesla",
+        "catagory": "Automobile",
+        "isLaunch": false
+    },
+    {
+        "id": 2,
+        "name": "BMW",
+        "catagory": "Automobile",
+        "isLaunch": true
+    },
+    {
+        "id": 3,
+        "name": "Samsung",
+        "catagory": "Telecommnucation",
+        "isLaunch": true
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "001",
+        "techName": "AI",
+        "skill": "machine learning",
+        "level": "hard"
+    },
+    {
+        "id": "002",
+        "techName": "Frontend",
+        "skill": "React",
+        "level": "easy"
+    },
+    {
+        "id": "003",
+        "techName": "backend",
+        "skill": "java",
+        "level": "hard"
+    },
+    {
+        "id": "004",
+        "techName": "Frontend",
+        "skill": "Angular",
+        "level": "Medium"
+    }
+]

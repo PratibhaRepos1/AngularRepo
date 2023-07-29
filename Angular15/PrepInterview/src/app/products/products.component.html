@@ -6,24 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content"><p>Show Technology Data</p>
+    <div class="content"><p>Show Products</p>
         <br>
         <div>
            <table class="table">
             <thead>
                 <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Tech Name</th>
-                <th scope="col">Skill</th>
-                <th scope="col">Level</th>
+                <th scope="col">Name</th>
+                <th scope="col">Catagory</th>
+                <th scope="col">Launch</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let technology of technologyData">
-                <th scope="row">{{technology.id}}</th>
-                <td>{{technology.techName}}</td>
-                <td>{{technology.skill}}</td>
-                <td>{{technology.level}}</td>
+            <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.catagory}}</td>
+                <td>{{product.isLaunch}}</td>
             </tr>
         </tbody>
            </table>
