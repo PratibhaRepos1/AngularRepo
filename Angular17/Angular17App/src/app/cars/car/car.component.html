@@ -1,4 +1,6 @@
 <div class="row item">
-  <div class="col-12 tag"><span>Name:</span>Ford</div>
-  <div class="col-12 tag"><span>Model:</span>charger</div>
+  <div class="col-12 tag"><span>Name:</span>{{ name }}</div>
+  <div class="col-12 tag"><span>Model:</span>{{ model }}</div>
+  <div class="col-12 tag"><span>Color:</span>{{ getTheColor("default") }}</div>
+  <div class="col-12 tag"><span>Date:</span>{{ date() | date }}</div>
 </div>

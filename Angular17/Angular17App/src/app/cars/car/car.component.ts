@@ -10,5 +10,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './car.component.css'
 })
 export class CarComponent {
+name='Ford';
+model = 'Nova';
+color = 'Black';
 
+date() {
+  return Date.now();
+}
+
+getTheColor(color:any) {
+  if(color !== 'default') {
+    this.color = color;
+    return this.color;
+  }
+  return this.color;
+
+}
 }
