@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <h2>Employee List</h2>
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Add ngFor loop for displaying employee data -->
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>
+          <!-- Use ngIf to display either the employee data or an input field for editing -->
+          <span *ngIf="!showEdit">{{ employee.firstName }}</span>
+          <input *ngIf="showEdit" [(ngModel)]="employee.firstName" />
+        </td>
+        <td>
+          <span *ngIf="!showEdit">{{ employee.lastName }}</span>
+          <input *ngIf="showEdit" [(ngModel)]="employee.lastName" />
+        </td>
+        <td>
+          <span *ngIf="!showEdit">{{ employee.salary }}</span>
+          <input *ngIf="showEdit" [(ngModel)]="employee.salary" />
+        </td>
+        <td>
+          <span *ngIf="!showEdit">{{ employee.dob }}</span>
+          <input *ngIf="showEdit" [(ngModel)]="employee.dob" />
+        </td>
+        <td>
+          <span *ngIf="!showEdit">{{ employee.email }}</span>
+          <input *ngIf="showEdit" [(ngModel)]="employee.email" />
+        </td>
+        <td>
+          <!-- Use ngIf to conditionally display either the "Delete" or "Edit" button -->
+
+          <button
+            *ngIf="showEdit"
+            class="btn btn-success"
+            (click)="UpdateEmp()"
+          >
+            Update
+          </button>
+          <button
+            *ngIf="showEdit"
+            class="btn btn-danger"
+            (click)="showEdit = false"
+          >
+            Cancel
+          </button>
+          <button *ngIf="!showEdit" class="btn btn-primary" (click)="EditEmp()">
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
