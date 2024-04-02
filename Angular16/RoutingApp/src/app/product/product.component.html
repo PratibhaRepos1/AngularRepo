@@ -1,1 +1,23 @@
-<p>product works!</p>
+<div class="products-container">
+  <h2>Products List</h2>
+  <ul class="product-list">
+    <li *ngFor="let product of products">
+      <div class="product-item">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price }}</p>
+        <p>
+          <a [routerLink]="['/product', product.id]"
+            ><button
+              value="View Details"
+              id="btnViewDetails"
+              class="btn btn-primary"
+            >
+              View Details
+            </button></a
+          >
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
