@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+  
+  .blue-btn {
+    background-color: blue !important;
+  }
+  
+  .green-btn {
+    background-color: green !important;
+  }
+  
+  .black-btn {
+    background-color: black !important;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons a {
+    margin-bottom: 10px;
+    color: white; /* Set font color to white */
+  }
+
+  .content {
+    border: 1px solid #ccc; /* Gray border */
+    padding: 20px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Adjust max-width as needed */
+  }

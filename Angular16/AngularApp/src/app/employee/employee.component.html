@@ -26,11 +26,13 @@
           <input *ngIf="showEdit" [(ngModel)]="employee.lastName" />
         </td>
         <td>
-          <span *ngIf="!showEdit">{{ employee.salary }}</span>
+          <span *ngIf="!showEdit">{{ employee.salary | currency }}</span>
           <input *ngIf="showEdit" [(ngModel)]="employee.salary" />
         </td>
         <td>
-          <span *ngIf="!showEdit">{{ employee.dob }}</span>
+          <span *ngIf="!showEdit">{{
+            employee.dob | date : "mediumDate" | uppercase
+          }}</span>
           <input *ngIf="showEdit" [(ngModel)]="employee.dob" />
         </td>
         <td>

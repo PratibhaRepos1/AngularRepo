@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <h2>Employees data from API</h2>
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track $index) {
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.employee_name }}</td>
+        <td>{{ employee.employee_salary }}</td>
+        <td>{{ employee.employee_age }}</td>
+      </tr>
+      }@empty {
+      <a>No item exist</a>
+      }
+    </tbody>
+  </table>
+</div>
