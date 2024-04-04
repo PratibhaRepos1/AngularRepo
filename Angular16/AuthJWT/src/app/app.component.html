@@ -1,0 +1,8 @@
+<app-login></app-login>
+
+<div>
+  <!-- Example of conditional link display based on user role -->
+  <a *ngIf="isAdmin()" routerLink="/all-users">All Users</a>
+</div>
+
+<router-outlet></router-outlet>
