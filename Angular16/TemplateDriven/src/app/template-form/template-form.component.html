@@ -1,6 +1,10 @@
 <div class="container">
-  <h1>User Registeration using Template Driven Form</h1>
-  <form #templateForm="ngForm" (ngSubmit)="onSubmit(templateForm)">
+  <h1>User Registration using Template Driven Form</h1>
+  <form
+    #templateForm="ngForm"
+    (ngSubmit)="onSubmit(templateForm.value)"
+    novalidate
+  >
     <div class="form-group">
       <label for="fullName">Full Name</label>
       <input
@@ -11,6 +15,12 @@
         ngModel
         required
       />
+      <div
+        *ngIf="templateForm.controls['fullName'].errors?.['required'] && templateForm.controls['fullName'].touched"
+        class="text-danger"
+      >
+        Full Name is required.
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
@@ -21,7 +31,20 @@
         name="email"
         ngModel
         required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
       />
+      <div
+        *ngIf="templateForm.controls['email'].errors?.['required'] && templateForm.controls['email'].touched"
+        class="text-danger"
+      >
+        Email is required.
+      </div>
+      <div
+        *ngIf="templateForm.controls['email'].errors?.['required'] && templateForm.controls['email'].touched"
+        class="text-danger"
+      >
+        Enter a valid email address, e.g., john@example.com.
+      </div>
     </div>
     <div class="form-group">
       <label for="phone">Phone No</label>
@@ -32,7 +55,22 @@
         name="phone"
         ngModel
         required
+        pattern="[0-9]{10,12}"
       />
+      <div
+        *ngIf="
+         templateForm.controls['phone'].errors?.['required'] && templateForm.controls['phone'].touched
+        "
+        class="text-danger"
+      >
+        Phone Number is required.
+      </div>
+      <div
+        *ngIf="templateForm.controls['phone'].errors?.['pattern'] && templateForm.controls['phone'].touched"
+        class="text-danger"
+      >
+        Phone number must be minimum 10 digits and maximum 12 digits in length.
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
@@ -43,7 +81,24 @@
         name="password"
         ngModel
         required
+        minlength="6"
       />
+      <div
+        *ngIf="
+         templateForm.controls['password'].errors?.['required'] && templateForm.controls['password'].touched
+        "
+        class="text-danger"
+      >
+        Password is required.
+      </div>
+      <div
+        *ngIf="
+         templateForm.controls['password'].errors?.['minlength'] && templateForm.controls['password'].touched
+        "
+        class="text-danger"
+      >
+        Password must be at least 6 characters.
+      </div>
     </div>
     <div class="form-group">
       <label for="confirmPassword">Confirm Password</label>
@@ -54,7 +109,27 @@
         name="confirmPassword"
         ngModel
         required
+        minlength="6"
+        [equalTo]="templateForm.controls['password'].value"
       />
+      <div
+        *ngIf="templateForm.controls['confirmPassword'].errors?.['required'] && templateForm.controls['confirmPassword'].touched"
+        class="text-danger"
+      >
+        Confirm Password is required.
+      </div>
+      <div
+        *ngIf="templateForm.controls['confirmPassword'].errors?.['minlength'] && templateForm.controls['confirmPassword'].touched"
+        class="text-danger"
+      >
+        Password must be at least 6 characters.
+      </div>
+      <div
+        *ngIf="templateForm.controls['confirmPassword'].errors?.['equalTo'] && templateForm.controls['confirmPassword'].touched"
+        class="text-danger"
+      >
+        Passwords do not match.
+      </div>
     </div>
     <div class="form-group form-check">
       <input
@@ -68,6 +143,12 @@
       <label class="form-check-label" for="agreeTerms"
         >Agree with terms and conditions</label
       >
+      <div
+        *ngIf="templateForm.controls['agreeTerms'].errors?.['required'] && templateForm.controls['agreeTerms'].touched"
+        class="text-danger"
+      >
+        You must agree with terms and conditions.
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
