@@ -1,7 +1,17 @@
-import { Component, computed, signal } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { Component, EventEmitter, Input, Output, computed, input, output  } from '@angular/core';
 
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// };
+
+// another approch type vs interface
+interface User {
+   id: string;
+   avatar: string;
+   name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -11,18 +21,25 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  selectedUser = signal(DUMMY_USERS[randomIndex]);
-  imagePath = computed(() => '../assets/users/' + this.selectedUser().avatar)
+  @Input({required: true}) user!: User;
+ 
 
-  // get imagePath() {
-  //   return '../assets/users/' + this.selectedUser.avatar
+  @Output() select = new EventEmitter<string>();
 
-  // } 
+  //select = output<string>(); //new angular17 feature: replacement of line 15
   
-  onSelectUser() {
-    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-    this.selectedUser.set(DUMMY_USERS[randomIndex]);
 
+  // Below code using signal input function
+  // avatar = input.required<string>();
+  // name = input.required<string>();
+  //imagePath = computed(() => '../../assets/users/' + this.avatar());
+
+  get imagePath() {
+    return '../../assets/users/' + this.user.avatar;
+  }
+
+  onSelectUser() {
+    this.select.emit(this.user.id);
 
   }
 
