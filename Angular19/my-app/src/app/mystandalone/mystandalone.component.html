@@ -1,0 +1,35 @@
+<p>Property Binding</p>
+<p>Your color preference is {{theme}}.</p>
+<br>
+<button (click)="changeTheme()" [disabled]="isFormValid">Change Theme</button>
+<p>Control Flow with Blocks</p>
+<p>If Block</p>
+<div>
+    @if(isFormValid) {
+        Content to render when the condition is true.
+    } @else {
+        Content to render when the condition is false.
+    }
+</div>
+<p>For block</p>
+   @for (item of items; track items) {
+       <li>{{item}}</li>
+   }
+<p>Switch block</p>
+@switch (pageID) {
+    @case (1) {
+        <p>Viewing content of 1st Page</p>
+    }
+    @case(2) {
+        <p>Viewing content of 2nd Page</p>
+    }
+    @default {
+        <p>Viewing content of Default Page</p>
+    }
+}
+<p>let for local variable</p>
+@let name = "John Doe";
+{{name}}
+<p>let with pipe and observable data</p>
+@let user = userData | async;
+{{user?.name}}
