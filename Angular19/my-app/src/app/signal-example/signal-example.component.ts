@@ -10,6 +10,7 @@ export class SignalExampleComponent {
   //Define the a signal with an initial value
   count: WritableSignal<number> = signal(0);
   doubleCount = computed(()=> this.count() *2);
+ 
 
   constructor() {
     // Subscribe to the signal and  Effect runs whenever `count` changes
