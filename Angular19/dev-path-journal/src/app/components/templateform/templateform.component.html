@@ -1,0 +1,14 @@
+<h2>Template Driven Forms</h2>
+<form #form="ngForm" (ngSubmit)="submit(form)">
+ 
+    <label>Name <span style="color:red">*</span></label>
+    <input name="name" ngModel required #name="ngModel" />
+    <!-- Validation Message -->
+     <div *ngIf="name.invalid && name.touched" style="color: red; font-size: 0.9em;">
+        Name is required.
+     </div>
+   
+    <p>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+     </p>
+</form>
